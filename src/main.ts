@@ -10,7 +10,7 @@ let rate: number = 0.19;
 const calcTaxResult = (): void => {
   const amountInput = document.querySelector('#amount') as HTMLInputElement;
 
-  let amount: number
+  let amount: number;
   if (amountInput) {
     amount = parseFloat(amountInput.value.replace(',', '.'));
 
@@ -38,7 +38,6 @@ const radioBtnList = document.querySelectorAll('input[type="radio"]') as NodeLis
 if (radioBtnList.length > 0) {
   for (let i = 0; i < radioBtnList.length; i++) {
     radioBtnList[i].addEventListener('click', () => {
-
       const amountLabel = document.querySelector('#amountLabel ') as HTMLElement;
       const rateInput = document.querySelector('#rate7') as HTMLInputElement;
       const taxDirection = document.querySelector('#brutto2netto') as HTMLInputElement;
