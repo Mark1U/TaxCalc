@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tax Calculator</title>
+  <style>
+    .card {
+      background-color: lightgray;
+      border-radius: 15px;
+      max-width: 400px;
+      color: black;
+      text-align: left;
+    }
+
+    .red {
+      color: red;
+    }
+
+    #calcBtn {
+      display: block;
+      width: 100%;
+      margin: 40px 0;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: blue;
+    }
+
+    h4 {
+      color: blue;
+    }
+
+    #amountLabel,
+    p {
+      font-weight: 600;
+    }
+
+    .amount-paragraph {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1>Mehrwertsteuer Rechner</h1>
+
+    <form name="TaxForm">
+      <div id="card" class="card">
+        <p>Was soll brechnet werden?</p>
+        <label for="netto2brutto">
+          <input type="radio" name="taxDirection" id="netto2brutto" value="netto2brutto" checked>Mehrwertsteuer
+          Aufschlagen (Netto zu Brutto)</label><br>
+        <label for="brutto2netto">
+          <input type="radio" name="taxDirection" id="brutto2netto" value="brutto2netto">Mehrwertsteuer Abziehen (Brutto
+          zu Netto)</label><br>
+
+        <p>Mehrwertsteuersatz</p>
+        <label for="rate19">
+          <input type="radio" name="rate" id="rate19" value="19" checked>19%</label><br>
+        <label for="rate7">
+          <input type="radio" name="rate" id="rate7" value="7">7%</label><br>
+
+        <div class="amount-paragraph">
+          <label id="amountLabel" for="amount">Nettobetrag (Preis ohne Mehrwertsteuer) in Euro</label><span
+            class="red">*</span>
+          <input type="text" id="amount" name="amount" required><br>
+          <input type="submit" id="calcBtn" value="Berechnen">
+        </div>
+
+        <h4>Ergebnis</h4>
+        <div class="resultBlock">
+          <p>Mehrwertsteuerbetrag</p>
+          <p id="resultVAT">€</p>
+        </div>
+        <div class="resultBlock">
+          <p>Bruttobetrag (Endpreis)</p>
+          <p id="resultGross">€</p>
+        </div>
+    </form>
+
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
